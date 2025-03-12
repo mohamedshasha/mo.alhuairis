@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>طلب وقود - الحويرص</title>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /><br />
+      <br />
+      <br />
+      <br />
+      <br /><br />
+      <br />
+      <br />
+      <br />
+
+      <img
+        src="image_12_-removebg-preview.png"
+        alt="شعار الشركة"
+        class="logo"
+      />
+      <br />
+      <p class="moving-text">الحويرص لتزويد المواد البترولية</p>
+      <br />
+      <h2 class="pulse" style="color: white; font-size: 28px;">
+        "وقودك مضمون ,, وين ما تكون"
+      </h2>
+
+      <label for="quantity">الكمية المطلوبة:</label>
+      <select id="quantity" onchange="updateTotal()">
+        <option value="50">50 لتر</option>
+        <option value="100">100 لتر</option>
+        <option value="150">150 لتر</option>
+        <option value="200">200 لتر</option>
+        <option value="250">250 لتر</option>
+        <option value="500">500 لتر</option>
+        <option value="600">600 لتر</option>
+        <option value="700">700 لتر</option>
+        <option value="800">800 لتر</option>
+        <option value="1000">1000 لتر</option>
+        <option value="1500">1500 لتر</option>
+        <option value="2000">2000 لتر</option>
+        <option value="2500">2500 لتر</option>
+        <option value="3000">3000 لتر</option>
+        <option value="5000">5000 لتر</option>
+        <option value="10000">10000 لتر</option>
+        <option value="20000">20000 لتر</option>
+        <option value="100000">100000 لتر</option>
+        <option value="150000">150000 لتر</option>
+        <option value="200000">200000 لتر</option>
+        <option value="250000">250000 لتر</option>
+        <option value="300000">300000 لتر</option>
+        <option value="400000">400000 لتر</option>
+        <option value="500000">500000 لتر</option>
+        <option value="600000">600000 لتر</option>
+        <option value="700000">700000 لتر</option>
+        <option value="800000">800000 لتر</option>
+        <option value="900000">900000 لتر</option>
+        <option value="1000000">800000 لتر</option>
+        <option value="other">أدخل كمية أخرى</option>
+        <!-- إضافة خيار لإدخال كمية يدوية -->
+      </select>
+
+      <!-- حقل لإدخال كمية يدوية -->
+      <input
+        type="number"
+        id="customQuantity"
+        placeholder="أدخل كمية أخرى"
+        style="display:none;"
+        onchange="updateTotal()"
+      />
+
+      <label for="kind"> نوع المنشأة</label>
+      <select id="kind" onchange="updateTotal()">
+        <option>مستشفى</option>
+        <option>القطاع الحكومي</option>
+        <option>منزل</option>
+        <option>بنك</option>
+        <option>مخبز</option>
+        <option>مجمع</option>
+        <option>شركة</option>
+        <option>مصنع</option>
+        <option>مزرعة</option>
+        <option>سوبر ماركت</option>
+        <option>مول</option>
+        <option>مطعم</option>
+        <option>خدمات أخرى</option>
+      </select>
+
+      <p id="price" style="color:red; font-size: 20px; font-weight: bold;">
+        السعر: 2782 جنيه / اللتر
+      </p>
+
+      <label for="deliveryTime">زمن وصول الوقود:</label>
+      <select id="deliveryTime">
+        <option value="30 دقيقة">30 دقيقة</option>
+        <option value="60 دقيقة">60 دقيقة</option>
+        <option value="2 ساعة">2 ساعة</option>
+        <option value="5 ساعات">5 ساعات</option>
+        <option value="12 ساعة">12 ساعة</option>
+        <option value="24 ساعات">24 ساعات</option>
+        <option value="48 ساعة">48 ساعة</option>
+        <option value="72 ساعة">72 ساعة</option>
+        
+
+      <label for="total">إجمالي السعر:</label>
+      <input type="text" id="total" readonly />
+
+      <input type="text" id="name" placeholder="اسم العميل" />
+      <input type="text" id="location" placeholder="مكان العميل" />
+      <input type="text" id="phone" placeholder="رقم الهاتف" />
+
+      <button style="background-color: #502C7D;" onclick="submitOrder()">
+        التاكد من البيانات
+      </button>
+      <div id="orderConfirmation" style="display: none;">
+        <p> <span id="orderNumber"></span></p>
+    </div>
+      <button style="background-color: red;" id="orderButton">أطلب الآن</button>
+
+      <p style="color: blue">"الأسعار قابلة للزيادة أو النقصان حسب السوق، ونسعى لتقديم الأفضل دائمًا
+        "</p>
+      <br />
+      <br />
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
