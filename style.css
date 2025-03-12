@@ -11,6 +11,8 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  padding: 0;
+  width: 100%;
 }
 select {
   background-color: #e0f7fa; /* لون أزرق فاتح */
@@ -33,7 +35,7 @@ select:focus {
 .container {
   background: white;
   background-image: url(baggg.png);
-  background-size: 700px auto;
+  background-size: contain;
   background-position: center; /* توسيط الصورة */
   background-repeat: no-repeat; /* منع تكرار الصورة */
   position: relative;
@@ -195,5 +197,13 @@ button:hover {
   }
   to {
     transform: translateX(-100%);
+  }
+  
+}
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+      max-width: 100%; /* اجعل العنصر يأخذ كامل العرض */
+      width: 100%; /* اجعل العرض 100% */
   }
 }
