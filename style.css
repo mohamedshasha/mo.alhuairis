@@ -1,0 +1,199 @@
+body {
+  background: linear-gradient(135deg, #f3f4f6, #d1d5db);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Cairo Play", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  background: linear-gradient(to right, #4caf50, #2e8b57);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+select {
+  background-color: #e0f7fa; /* لون أزرق فاتح */
+  color: #004d40; /* لون نص غامق ليتناسب مع الخلفية */
+  border: 2px solid #00acc1; /* تحديد بلون أزرق مميز */
+  border-radius: 8px; /* حواف دائرية */
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  outline: none;
+  transition: 0.3s;
+}
+
+select:focus {
+  background-color: #b2ebf2; /* تفتيح اللون عند التركيز */
+  border-color: blue; /* تغيير لون الإطار عند التفاعل */
+}
+
+.container {
+  background: white;
+  background-image: url(baggg.png);
+  background-size: 700px auto;
+  background-position: center; /* توسيط الصورة */
+  background-repeat: no-repeat; /* منع تكرار الصورة */
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+#orderNumberDisplay {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  margin-top: 10px;
+}
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: rotateLogo 2s linear infinite; /* الأنيميشن هنا */
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+label[for="total"] {
+  color: blue;
+  font-weight: bold;
+  font-size: 24px;
+}
+label[for="time"] {
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+}
+label[for="quantity"] {
+  color: red;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  -webkit-text-stroke: 0.5px white; /* إضافة الحدود البيضاء */
+}
+label[for="kind"] {
+  color: blue;
+  font-family: "Cairo Play", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+  font-family: "Amiri Quran", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: all;
+  border-radius: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#total {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+#kind {
+  background-color: #502c7d;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+
+select,
+input,
+button {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+.p {
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+button:hover {
+  background: #218838;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap");
+
+.moving-text {
+  color: red;
+  font-size: 42px;
+  font-weight: bold;
+  margin-top: 5px;
+  font-family: "Amiri Quran", serif;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: moveText 8s linear infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes moveText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
