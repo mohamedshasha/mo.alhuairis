@@ -92,12 +92,10 @@ label[for="time"] {
   font-size: 24px;
 }
 label[for="quantity"] {
-  color: red;
+  color: blue;
   font-weight: bold;
   font-size: 24px;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  -webkit-text-stroke: 0.5px white; /* إضافة الحدود البيضاء */
 }
 label[for="kind"] {
   color: blue;
@@ -111,7 +109,15 @@ label[for="kind"] {
   font-family: "Amiri Quran", serif;
   font-weight: 400;
   font-style: normal;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(249, 5, 5, 0.9);
+  transform: all;
+  border-radius: 20px;
+}
+.moving-text {
+  font-family: "cairo", serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: blue;
   transform: all;
   border-radius: 20px;
 }
@@ -187,30 +193,7 @@ button:hover {
 }
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap");
 
-.moving-text {
-  color: red;
-  font-size: 42px;
-  font-weight: bold;
-  margin-top: 5px;
-  font-family: "Amiri Quran", serif;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: moveText 8s linear infinite;
-  animation-timing-function: ease-in-out;
-  will-change: transform;
-}
 
-@keyframes moveText {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-    will-change: transform;
-  }
-  
-}
 /* للأجهزة المحمولة الصغيرة (أقل من 320 بكسل) */
 @media (max-width: 320px) {
   .container {
