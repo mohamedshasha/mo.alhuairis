@@ -20,7 +20,19 @@ function getOrderDetails() {
     };
 }
 
+function updateCustomQuantityInput() {
+    let quantitySelect = document.getElementById("quantity");
+    let customQuantityInput = document.getElementById("customQuantity");
+
+    requestAnimationFrame(() => {
+        customQuantityInput.style.display = quantitySelect.value === "other" ? "block" : "none";
+    });
+}
+
+let debounceTimer;
+
 function updateTotal() {
+    clearTimeout(debounceTimer);
     let quantitySelect = document.getElementById("quantity");
     let customQuantityInput = document.getElementById("customQuantity");
     let quantity = quantitySelect.value === "other" ? parseInt(customQuantityInput.value) || 0 : parseInt(quantitySelect.value);
