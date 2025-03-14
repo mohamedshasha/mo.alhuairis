@@ -1,16 +1,19 @@
+
 body {
-  background: linear-gradient(135deg, #f3f4f6, #d1d5db);
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: "Cairo Play", sans-serif;
-  font-weight: bolder;
-  font-style: normal;
-  background: linear-gradient(to right, #4caf50, #2e8b57);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    background: linear-gradient(135deg, #f3f4f6, #d1d5db);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Cairo Play", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* تغيير height إلى min-height */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: none;
 }
 select {
   background-color: #e0f7fa; /* لون أزرق فاتح */
@@ -33,18 +36,22 @@ select:focus {
 .container {
   background: white;
   background-image: url(baggg.png);
-  background-size: 700px auto;
-  background-position: center; /* توسيط الصورة */
-  background-repeat: no-repeat; /* منع تكرار الصورة */
+  background-size: contain;
+  background-position: center top; /* تغيير background-position */
+  background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   max-width: 400px;
-  width: 100%;
+  width: 90%;
   animation: fadeIn 0.5s ease-in-out;
   animation-timing-function: ease-in-out;
+  will-change: transform;
 }
 #orderNumberDisplay {
   font-size: 18px;
@@ -54,7 +61,7 @@ select:focus {
 }
 .logo {
   width: 120px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   animation: rotateLogo 2s linear infinite; /* الأنيميشن هنا */
 }
 
@@ -62,6 +69,7 @@ select:focus {
   0% {
     transform: scale(0.8);
     opacity: 0.5;
+    will-change: transform;
   }
   50% {
     transform: scale(1);
@@ -117,7 +125,9 @@ label[for="kind"] {
   }
   100% {
     transform: scale(1);
+    will-change: transform;
   }
+  
 }
 
 #total {
@@ -172,6 +182,7 @@ button:hover {
   to {
     opacity: 1;
     transform: scale(1);
+    will-change: transform;
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap");
@@ -187,6 +198,7 @@ button:hover {
   display: inline-block;
   animation: moveText 8s linear infinite;
   animation-timing-function: ease-in-out;
+  will-change: transform;
 }
 
 @keyframes moveText {
@@ -195,7 +207,9 @@ button:hover {
   }
   to {
     transform: translateX(-100%);
+    will-change: transform;
   }
+  
 }
 /* للأجهزة المحمولة الصغيرة (أقل من 320 بكسل) */
 @media (max-width: 320px) {
