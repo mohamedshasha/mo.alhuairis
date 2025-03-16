@@ -107,9 +107,20 @@
       <label for="total">إجمالي السعر:</label>
       <input type="text" id="total" readonly />
 
-      <input type="text" id="name" placeholder="اسم العميل" />
-      <input type="text" id="location" placeholder="مكان العميل" />
-      <input type="text" id="phone" placeholder="رقم الهاتف" />
+            <div class="input-container">
+        <input type="text" id="name" placeholder=" " />
+        <label for="name" class="placeholder">اسم العميل</label>
+    </div>
+    
+    <div class="input-container">
+        <input type="text" id="location" placeholder=" " />
+        <label for="location" class="placeholder">مكان العميل</label>
+    </div>
+    
+    <div class="input-container">
+        <input type="text" id="phone" placeholder=" " />
+        <label for="phone" class="placeholder">رقم الهاتف</label>
+    </div>
 
       <button style="background-color: #502C7D;" onclick="submitOrder()">
         التاكد من البيانات
