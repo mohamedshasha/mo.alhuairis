@@ -103,6 +103,284 @@ label[for="kind"] {
   font-weight: bold;
   font-size: 24px;
 }
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 12px;
+  direction: rtl;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+  text-align: right;
+  position: relative;
+}
+
+label.placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: gray;
+  transition: 0.3s;
+  pointer-events: none;
+  text-align: right;
+  width: 90%;
+}
+
+input:focus + label.placeholder,
+input:not(:placeholder-shown) + label.placeholder {
+  top: 10px;
+  transform: translateY(0);
+  font-size: 14px;
+  color: blue;
+}
+.pulse {
+  animation: pulse 2s infinite;
+  font-family: "Amiri Quran", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(249, 5, 5, 0.9);
+  transform: all;
+  border-radius: 20px;
+}
+.moving-text {
+  font-family: "cairo", serif;
+  font-weight: bold;
+  font-style: normal;
+  background-color: blue;
+  transform: all;
+  border-radius: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    will-change: transform;
+  }
+  
+}
+
+#total {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+#kind {
+  background-color: #502c7d;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+
+select,
+input,
+button {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+.p {
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+button:hover {
+  background: #218838;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    will-change: transform;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap");
+
+
+/* للأجهزة المحمولة الصغيرة (أقل من 320 بكسل) */
+@media (max-width: 320px) {
+  .container {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .logo {
+    width: 80px;
+  }
+}
+
+/* للأجهزة المحمولة الأكبر (أقل من 768 بكسل) */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .logo {
+    width: 100px;
+  }
+}
+
+/* للأجهزة اللوحية (بين 768 و 1024 بكسل) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 15px;
+    font-size: 18px;
+  }
+  .logo {
+    width: 120px;
+  }
+}
+
+/* للشاشات الأكبر (أكبر من 1200 بكسل) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .logo {
+    width: 150px;
+  }
+}
+
+body {
+    background: linear-gradient(135deg, #f3f4f6, #d1d5db);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Cairo Play", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* تغيير height إلى min-height */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    transition: none;
+}
+select {
+  background-color: #e0f7fa; /* لون أزرق فاتح */
+  color: #004d40; /* لون نص غامق ليتناسب مع الخلفية */
+  border: 2px solid #00acc1; /* تحديد بلون أزرق مميز */
+  border-radius: 8px; /* حواف دائرية */
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  outline: none;
+  transition: 0.3s;
+}
+
+select:focus {
+  background-color: #b2ebf2; /* تفتيح اللون عند التركيز */
+  border-color: blue; /* تغيير لون الإطار عند التفاعل */
+}
+
+.container {
+  background: white;
+  background-image: url(baggg.png);
+  background-size: contain;
+  background-position: center top; /* تغيير background-position */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: fadeIn 0.5s ease-in-out;
+  animation-timing-function: ease-in-out;
+  will-change: transform;
+}
+#orderNumberDisplay {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  margin-top: 10px;
+}
+.logo {
+  width: 120px;
+  margin-top: 15px;
+  animation: rotateLogo 2s linear infinite; /* الأنيميشن هنا */
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+    will-change: transform;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+label[for="total"] {
+  color: blue;
+  font-weight: bold;
+  font-size: 24px;
+}
+label[for="time"] {
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+}
+label[for="quantity"] {
+  color: blue;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 5px;
+}
+label[for="kind"] {
+  color: blue;
+  font-family: "Cairo Play", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
 
 .pulse {
   animation: pulse 2s infinite;
