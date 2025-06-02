@@ -96,7 +96,7 @@ let message = `طلب وقود جديد:\n\n` +
 
 
     let encodedMessage = encodeURIComponent(message);
-    let whatsappURL = `https://wa.me/${249123103333}?text=${encodedMessage}`;
+    let whatsappURL = `https://wa.me/${249995066648}?text=${encodedMessage}`;
 
     // فتح واتساب في نافذة جديدة
     window.open(whatsappURL, "_blank");
